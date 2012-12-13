@@ -896,7 +896,13 @@ function getTimeSeries(tsNodes) {
 
     var currRSdatum = {}
     currRSdatum['data'] = currTimeSeries
-    currRSdatum['color'] = 'steelblue'
+    var lineColor = ChooseFill(currNode, false)
+    console.log("color of line: "+lineColor)
+    currRSdatum['color'] = lineColor
+    if(lineColor == 'lightblue') {
+      currRSdatum['color'] == 'steelblue'
+    }
+
     currRSdatum['name'] = currNode['name']
     seriesData.push(currRSdatum)
   }
